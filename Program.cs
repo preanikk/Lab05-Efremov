@@ -136,24 +136,36 @@ using System.Reflection.Metadata;
 // Console.WriteLine(season);
 
 
-// Вариант 6 
-string role = Console.ReadLine();
-bool acc = true;
-switch (role)
+// // Вариант 6 
+// string role = Console.ReadLine();
+// bool acc = true;
+// switch (role)
+// {
+//     case "admin":
+//         Console.WriteLine("Полный доступ");
+//         break;
+//     case "teacher" when acc:
+//         Console.WriteLine("Доступ преподавателя");
+//         break;
+//     case "teacher":
+//         Console.WriteLine("Требуется подтверждение");
+//         break;
+//     case "user":
+//         Console.WriteLine("Ограниченный доступ");
+//         break;
+//     default:
+//         Console.WriteLine("Доступ запрещен");
+//         break;
+// }
+
+
+int number = 2;
+string chislo = number switch
 {
-    case "admin":
-        Console.WriteLine("Полный доступ");
-        break;
-    case "teacher" when acc:
-        Console.WriteLine("Доступ преподавателя");
-        break;
-    case "teacher":
-        Console.WriteLine("Требуется подтверждение");
-        break;
-    case "user":
-        Console.WriteLine("Ограниченный доступ");
-        break;
-    default:
-        Console.WriteLine("Доступ запрещен");
-        break;
-}
+    < 0 => "Отрицательное",
+    1 or 2 or 3 => "Маленькое число",
+    >= 0 and <= 9 => "Однозначное",
+    >= 10 and <= 99 => "Двузначное",
+    >= 100 => "Трехзначное или больше",
+};
+Console.WriteLine(chislo);
